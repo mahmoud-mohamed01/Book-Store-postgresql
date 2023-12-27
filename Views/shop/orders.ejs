@@ -1,0 +1,21 @@
+<%- include("../partials/header.ejs") %>
+<main>
+    <h1>orders</h1>
+    <ul>
+        <% orders.forEach(order=>{ %>
+            
+
+            <h2>#<%= order.id %></h2>
+            <%order.products.forEach(prod=>{ %>
+                <li>title: <%= prod.title %></li>
+                <li>price: <%= prod.price %></li>
+                <li>quantity<%=prod.orderItem.quantity %></li>
+                <hr>
+        
+           <% }) %>
+            <% }) %>
+    </ul>
+
+</main>
+
+<%- include("../partials/end.ejs") %>

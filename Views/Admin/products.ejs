@@ -1,0 +1,28 @@
+<%- include("../partials/header.ejs") %>
+
+<div class="books-container">
+  <% products.forEach(item=>{ %>
+     <div class="book">
+        <h2><%= item.title %></h2>
+        <img src="<%= item.imageUrl  %>" alt="">
+        <p class="price">$<%= item.price %></p>
+        <p class="description"> <%= item.description %></p>
+        <div class="btns-container">
+          <form action="/Admin/editProduct/<%=item.id%>" method="get">
+            <button type="submit" class="btn">edit</button>
+        </form>     
+        <form action="/Admin/deleteProduct/<%=item.id%>" method="post">
+            <button type="submit" class="btn">delete</button>
+        </form>  
+        </div>
+        
+    </div>
+
+  <%  }) %>
+
+    
+
+</div>
+
+
+<%- include("../partials/end.ejs") %>
